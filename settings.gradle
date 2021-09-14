@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Just Java"
 include ':app'
+include ':practiceset2ud'

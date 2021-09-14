@@ -21,10 +21,13 @@ import java.text.NumberFormat;
      * this method is called when the order button is clicked
      */
     public void submitOrder(View view) {
+        int price = quantity * 5;
         //display(quantity);
         //displayPrice(quantity * 5);
-        String priceMessage = "Free";
+        String priceMessage = "Total: $" + price + "\nThank you!";
+        //priceMessage = priceMessage + " Woohoo!";
         displayMessage(priceMessage);
+        //String orderNumber = "Order number:" + 23;
     }
 
      /**
