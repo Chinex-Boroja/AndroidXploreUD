@@ -96,11 +96,12 @@ import java.text.NumberFormat;
       * @return the priceMessage
       */
      private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate, String addName) {
-         String priceMessage = "Name: " + addName;
-         priceMessage += "\nAdd whipped cream? " + addWhippedCream;
-         priceMessage += "\nAdd chocolate? " + addChocolate;
-         priceMessage += "\nQuantity: " + quantity;
-         priceMessage += "\nTotal: $" + price + "\nThank you!";
+         String priceMessage = getString(R.string.order_summary_name, addName);
+         priceMessage += "\n" + getString(R.string.order_summary_whipped_cream, addWhippedCream);
+         priceMessage += "\n" + getString(R.string.order_summary_chocolate, addChocolate);
+         priceMessage += "\n" + getString(R.string.order_summary_quantity, quantity);
+         priceMessage += "\n" + getString(R.string.order_summary_price, NumberFormat.getCurrencyInstance().format(price)) +
+                 "\n" + getString(R.string.thank_you);
          return priceMessage;
 
      }
