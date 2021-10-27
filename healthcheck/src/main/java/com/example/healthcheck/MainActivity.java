@@ -55,12 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayHealthLevelCount(int score) {
         TextView currentScore = (TextView) findViewById(R.id.current_score);
-        currentScore.setText("Your current score is " + score);
+        currentScore.setText("Your current score is: " + score);
     }
 
     private void displayFinalResultText() {
         TextView finalResultText = (TextView) findViewById(R.id.result_message);
-        finalResultText.setText("Final Result:");
+        finalResultText.setText("Final Result is:");
     }
 
     private void displayCount(int scored) {

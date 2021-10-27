@@ -5,11 +5,31 @@
       <map>
         <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/app/src/main/res/drawable/ic_check_circle.xml" value="0.14814814814814814" />
         <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/callingobjectmethoddemo/src/main/res/drawable/border_auth.xml" value="0.3828125" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/callingobjectmethoddemo/src/main/res/drawable/border_frame.xml" value="0.3828125" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/callingobjectmethoddemo/src/main/res/drawable/button_border.xml" value="0.3828125" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/callingobjectmethoddemo/src/main/res/drawable/button_border_green.xml" value="0.3828125" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/callingobjectmethoddemo/src/main/res/drawable/custom_shape.xml" value="0.3828125" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/callingobjectmethoddemo/src/main/res/drawable/green_rounded.xml" value="0.2483108108108108" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/callingobjectmethoddemo/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/callingobjectmethoddemo/src/main/res/layout/home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/callingobjectmethoddemo/src/main/res/layout/sign_in.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/callingobjectmethoddemo/src/main/res/layout/user.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/cookies/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/courtcounter/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/healthcheck/src/main/res/drawable/border.xml" value="0.14814814814814814" />
         <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/healthcheck/src/main/res/drawable/border1.xml" value="0.14814814814814814" />
-        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/healthcheck/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/healthcheck/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/menu/src/main/res/layout/activity_main.xml" value="0.20625" />
         <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/practiceset2ud/src/main/res/layout/activity_practice_set2.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/testdemo/src/main/res/drawable/button_border.xml" value="0.3828125" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/testdemo/src/main/res/drawable/splash_background.xml" value="0.253125" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/testdemo/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/testdemo/src/main/res/layout/activity_on_boarding.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/testdemo/src/main/res/layout/activity_sign_in.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/testdemo/src/main/res/layout/activity_specialist.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/testdemo/src/main/res/layout/activity_user.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Chinex_Boroja/AndroidStudioProjects/JustJava/testdemo/src/main/res/layout/activity_welcome_page.xml" value="0.35260416666666666" />
       </map>
     </option>
   </component>
