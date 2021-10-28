@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MediaPlayer</string>
+    <string name="seek_left"><![CDATA[>>>]]></string>
+    <string name="play"><![CDATA[>]]></string>
+    <string name="seek_right"><![CDATA[<<<]]></string>
+    <string name="pause">II</string>
 </resources>
