@@ -53,6 +53,12 @@ public class MediaActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),
                     "Playing",Toast.LENGTH_SHORT).show();
             mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    Toast.makeText(MediaActivity.this, "Done playing", Toast.LENGTH_SHORT).show();
+                }
+            });
             endTime = mediaPlayer.getDuration();
             startTime = mediaPlayer.getCurrentPosition();
 
