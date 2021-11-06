@@ -1,9 +1,15 @@
 package com.example.mediaplayer;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.media.AudioAttributes;
+import android.media.AudioFocusRequest;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -29,11 +35,59 @@ public class MediaActivity extends AppCompatActivity {
     private SeekBar seekbar;
     TextView tx1,tx2,tx3;
 
+    // Audio manager instance to manage or
+    // handle the audio interruptions
+    AudioManager audioManager;
+
+    // Audio attributes instance to set the playback
+    // attributes for the media player instance
+    // these attributes specify what type of media is
+    // to be played and used to callback the audioFocusChangeListener
+    AudioAttributes playbackAttributes;
+
+    // media player is handled according to the
+    // change in the focus which Android system grants for
+    AudioManager.OnAudioFocusChangeListener audioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
+        @Override
+        public void onAudioFocusChange(int focusChange) {
+            if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+                mediaPlayer.start();
+            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
+                mediaPlayer.pause();
+                mediaPlayer.seekTo(0);
+            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
+                mediaPlayer.release();
+            }
+        }
+    };
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("DefaultLocale")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media);
+
+        // get the audio system service for
+        // the audioManger instance
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
+        // initiate the audio playback attributes
+        playbackAttributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                .build();
+
+        // set the playback attributes for the focus requester
+        AudioFocusRequest focusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN).
+                setAudioAttributes(playbackAttributes)
+                .setAcceptsDelayedFocusGain(true)
+                .setOnAudioFocusChangeListener(audioFocusChangeListener)
+                .build();
+
+        // request the audio focus and
+        // store it in the int variable
+        final int audioFocusRequest = audioManager.requestAudioFocus(focusRequest);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.work);
 
@@ -52,13 +106,19 @@ public class MediaActivity extends AppCompatActivity {
         play.setOnClickListener(v -> {
             Toast.makeText(getApplicationContext(),
                     "Playing",Toast.LENGTH_SHORT).show();
-            mediaPlayer.start();
-            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mp) {
-                    Toast.makeText(MediaActivity.this, "Done playing", Toast.LENGTH_SHORT).show();
-                }
-            });
+
+            // request the audio focus by the Android system
+            // if the system grants the permission
+            // then start playing the audio file
+            if (audioFocusRequest == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        Toast.makeText(MediaActivity.this, "Done playing", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
             endTime = mediaPlayer.getDuration();
             startTime = mediaPlayer.getCurrentPosition();
 
